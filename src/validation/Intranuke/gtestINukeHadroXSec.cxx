@@ -350,12 +350,12 @@ int main(int argc, char ** argv)
 
   if(gOptWriteOutput) 
   {
-    ifstream test_file;
+    std::ifstream test_file;
     bool file_exists=false;
     test_file.open(gOptOutputFilename.c_str(), std::ifstream::in);
     file_exists=test_file.is_open();
     test_file.close();
-    ofstream xsec_file; 
+    std::ofstream xsec_file; 
     xsec_file.open(gOptOutputFilename.c_str(), std::ios::app);
     if (!file_exists)
       {

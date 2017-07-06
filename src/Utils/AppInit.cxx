@@ -19,8 +19,6 @@
 // for exit()
 #include <cstdlib>
 
-#include <TSystem.h>
-
 //#include "Conventions/XmlParserStatus.h"
 #include "Messenger/Messenger.h"
 #include "Numerical/RandomGen.h"
@@ -48,16 +46,13 @@ void genie::utils::app_init::XSecTable (string inpfile, bool require_table)
   XSecSplineList * xspl = XSecSplineList::Instance();
   xspl->AutoLoad(); // display warning for usage $GSPLOAD no longer supported
 
-  // expand in case of embedded env var or ~
-  string expandedinpfile = gSystem->ExpandPathName(inpfile.c_str());
-
   // file was specified & exists - load table
-  if(utils::system::FileExists(expandedinpfile)) {
+  if(utils::system::FileExists(inpfile)) {
     XSecSplineList * xspl = XSecSplineList::Instance();
-    XmlParserStatus_t status = xspl->LoadFromXml(expandedinpfile);
+    XmlParserStatus_t status = xspl->LoadFromXml(inpfile);
     if(status != kXmlOK) {
       LOG("AppInit", pFATAL)
-         << "Problem reading file: " << expandedinpfile;
+         << "Problem reading file: " << inpfile;
        gAbortingInErr = true;
        exit(1);
     }

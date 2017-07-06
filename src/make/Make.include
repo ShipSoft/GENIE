@@ -13,7 +13,7 @@
 include $(GENIE)/src/make/Make.config
 
 ifndef GOPT_WITH_CXX_USERDEF_FLAGS
- GOPT_WITH_CXX_USERDEF_FLAGS=
+ GOPT_WITH_CXX_USERDEF_FLAGS=-std=c++11
 endif
 
 #-------------------------------------------------------------------

@@ -72,7 +72,6 @@ public:
   string           XSecFileName  (int imodel)       const;
   TChain *         EvtChain      (int imodel)       const;
   vector<string> & EvtFileNames  (int imodel)       const;
-  const string   & PathToXMLFile(void)              const;             
   void             Print         (ostream & stream) const;
   bool             LoadFromFile  (string xmlfile);
 
@@ -90,7 +89,6 @@ private:
   vector<string>          * fXSecFileName;
   vector<TChain*>         * fEvtChain;
   vector<vector<string> > * fEvtFileNames;
-  string                    fPath2XMLFile;
 };
 
 }      // genie namespace

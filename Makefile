@@ -44,7 +44,7 @@ BUILD_TARGETS =    print-make-info \
 		   masterclass-support-softw \
 		   install-scripts
 INSTALL_TARGETS =  print-makeinstall-info \
-		   check-previous-installation \
+		   # check-previous-installation \
 		   make-install-dirs \
 		   copy-install-files
 
@@ -374,7 +374,7 @@ make-bin-lib-dir: FORCE
 	[ -d bin ] || mkdir bin; chmod 755 bin;\
 	[ -d lib ] || mkdir lib; chmod 755 lib;
 
-check-previous-installation: FORCE
+# check-previous-installation: FORCE
 	@echo " "
 	@echo "** Testing for existing GENIE installation at specified installation location..."
 ifeq ($(strip $(GENIE_PREVIOUS_INSTALLATION)),YES)

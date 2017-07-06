@@ -467,11 +467,11 @@ void Spline::SaveAsXml(
   {
     fInterpolator->GetKnot(iknot, x, y);
 
-    ofs  << setiosflags(ios::fixed) << setprecision(5);
+    ofs  << std::setiosflags(ios::fixed) << setprecision(5);
     ofs  << "\t<knot>"
          << " <" << xtag << "> " << setfill(' ')
                                  << setw(10) << x << " </" << xtag << ">";
-    ofs  << setiosflags(ios::scientific) << setprecision(10);
+    ofs  << std::setiosflags(ios::scientific) << setprecision(10);
     ofs  << " <" << ytag << "> " << setfill(' ')
                                  << setw(10) << y << " </" << ytag << ">"
          << " </knot>" << endl;

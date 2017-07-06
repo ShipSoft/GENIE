@@ -106,7 +106,7 @@ Long64_t gLastEventNum  = -1;
 
 TTree *            gEventTree = 0;
 NtpMCEventRecord * gMCRec = 0;
-ofstream           gErrLog;
+std::ofstream           gErrLog;
 
 //____________________________________________________________________________
 int main(int argc, char ** argv)
