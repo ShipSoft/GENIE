@@ -77,7 +77,7 @@ int main(int argc, char ** argv)
   int           countfate [nfates]; // total no. of events with given fate
   double        sigma     [nfates]; // cross sections
   double        sigma_err [nfates]; // cross section errors
-  string        fatestr   [nfates] = "  ";
+  string        fatestr   [nfates] = {"  "};
   INukeFateHA_t fatetype  [nfates];
 
   fatetype[0] = kIHAFtUndefined;   
